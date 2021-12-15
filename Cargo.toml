@@ -1,0 +1,19 @@
+cargo-features = ["strip"]
+
+[profile.release]
+opt-level = "z"  # Optimize for size.
+strip = true  # Automatically strip symbols from the binary.
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[package]
+name = "trash-cli"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = "2.34.0"
+dirs = "4.0.0"
